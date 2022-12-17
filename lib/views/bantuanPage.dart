@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, avoid_unnecessary_containers, duplicate_ignore, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/hotline.dart';
 import 'dart:convert';
 import 'package:flutter_application_1/views/theme.dart';
 import 'package:http/http.dart' as http;
@@ -408,62 +409,11 @@ class _BantuanPageState extends State<BantuanPage> {
                   }),
               const SizedBox(height: 10.0),
               buildButton1(
-                image: 'assets/images/konsultasi.png',
-                text: 'Hotline Pusat',
-                color: Color.fromARGB(255, 163, 27, 179).withOpacity(0.2),
-                onClicked: () => showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  builder: (context) => Container(
-                    padding: EdgeInsets.only(
-                        bottom: 20.0, left: 40.0, right: 40.0, top: 20.0),
-                    height: MediaQuery.of(context).size.height * 0.60,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: const Radius.circular(25.0),
-                        topRight: const Radius.circular(25.0),
-                      ),
-                    ),
-                    child: ListView(
-                      children: [
-                        GestureDetector(
-                          onTap: () => Navigator.pop(context),
-                          child: Icon(
-                            Icons.keyboard_arrow_down,
-                            size: 20.0,
-                          ),
-                        ),
-                        Image(
-                          image: AssetImage('assets/images/konsultasi.png'),
-                          width: 100.0,
-                          height: 100.0,
-                        ),
-                        Center(
-                          child: Text(
-                            "Hotline Pusat covid-19",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black),
-                          ),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          "1.Depok: 112 dan 119\n2.Majalengka: 112\n3.Sukabumi:08001000119\n3.Bandung: 082118219287\n4.Garut: 0262-2802800 and 119\n5.Indramayu: 08111333314\n6.Kuningan: 081388284346\n7.Cirebon: 0231 – 8800119 / 081998800119\n8.Bekasi: 112/119 – 021 89910039 – 08111139927 085283980119 \n9.Cirebon: 119 \n10.Bogor: 0251-8363335, 08111116093 \n11.Purwakarta: 112 / 081909514472 \n12.Bogor: 119 dan 112 \n13.Ciamis: 119 – 081394489808 – 085314993901 \n14.Karawang: 085282537355 – 119 \n15.Cianjur: 085321161119 \n16.Cimahi: 08122126256 and 081221423039 \n17.Banjar: 085223344119 and 082120370313 \n18.Pangandaran: 119/085320643695 \n19.Sumedang: 119 \n20.West Bandung: 089522434611 \n21.Tasikmalaya: 119 \n22.Bandung: 112 and 119. \n23.Kuningan: 081388284346 \n24.Subang: 081322916001 / 082115467455",
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xff333333),
-                          ),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+                  image: 'assets/images/konsultasi.png',
+                  text: 'Hotline Pusat',
+                  color: Color.fromARGB(255, 163, 27, 179).withOpacity(0.2),
+                  onClicked: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Hotline()))),
               const SizedBox(height: 10.0),
               buildButton1(
                 image:
@@ -499,7 +449,7 @@ class _BantuanPageState extends State<BantuanPage> {
                             ),
                             SizedBox(height: 10.0),
                             Text(
-                              sessions[index]['name'].toString(),
+                              sessions[index][''].toString(),
                               style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
