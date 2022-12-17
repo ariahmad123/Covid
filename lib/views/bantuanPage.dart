@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/views/hotline.dart';
+import 'package:flutter_application_1/views/rumahsakit.dart';
 import 'dart:convert';
 import 'package:flutter_application_1/views/theme.dart';
 import 'package:http/http.dart' as http;
@@ -416,55 +417,12 @@ class _BantuanPageState extends State<BantuanPage> {
                       MaterialPageRoute(builder: (context) => Hotline()))),
               const SizedBox(height: 10.0),
               buildButton1(
-                image:
-                    'assets/images/red-circle-button-with-white-plus-ferst-aid-health-care-emergency-help-3d-icon_313242-1185-removebg-preview 1).png',
-                text: 'Rumah Sakit Terdekat',
-                color: Color.fromARGB(255, 179, 27, 45).withOpacity(0.2),
-                onClicked: () => showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  builder: (context) => Container(
-                    padding: EdgeInsets.only(
-                        bottom: 20.0, left: 20.0, right: 20.0, top: 20.0),
-                    height: MediaQuery.of(context).size.height * 0.60,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: const Radius.circular(25.0),
-                        topRight: const Radius.circular(25.0),
-                      ),
-                    ),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: listC,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            Image(
-                              image: AssetImage(
-                                  'assets/images/red-circle-button-with-white-plus-ferst-aid-health-care-emergency-help-3d-icon_313242-1185-removebg-preview 1).png'),
-                              width: 100.0,
-                              height: 100.0,
-                            ),
-                            SizedBox(height: 10.0),
-                            Text(
-                              sessions[index][''].toString(),
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff333333),
-                              ),
-                              textAlign: TextAlign.justify,
-                            ),
-                            SizedBox(height: 10.0),
-                          ],
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ),
+                  image:
+                      'assets/images/red-circle-button-with-white-plus-ferst-aid-health-care-emergency-help-3d-icon_313242-1185-removebg-preview 1).png',
+                  text: 'Rumah Sakit Terdekat',
+                  color: Color.fromARGB(255, 179, 27, 45).withOpacity(0.2),
+                  onClicked: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Rumahsakit()))),
             ],
           ),
         ),

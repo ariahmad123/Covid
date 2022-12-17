@@ -38,33 +38,35 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    final logo = Hero(
-      tag: 'hero',
-      child: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        radius: 47.0,
-        child: Image.asset('assets/images/covid.png'),
-      ),
-    );
     return Scaffold(
       appBar: AppBar(
         title: Center(child: appBar(context)),
         // ignore: prefer_const_constructors
-        backgroundColor: Color.fromARGB(255, 6, 6, 108),
+
         elevation: 0.0,
         // ignore: deprecated_member_use
         brightness: Brightness.light,
       ),
       body: Container(
-        color: const Color.fromARGB(255, 6, 6, 108),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color(0xFF3383CD),
+              Color(0xFF11249F),
+            ],
+          ),
+          image: DecorationImage(
+            image: AssetImage("assets/images/3Dcovid.png"),
+          ),
+        ),
         child: Form(
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
-                const Spacer(),
-                logo,
-                const SizedBox(height: 50.0),
+                const SizedBox(height: 140.0),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailController,
@@ -112,7 +114,7 @@ class _SignInState extends State<SignIn> {
                     password = val;
                   },
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 100),
                 GestureDetector(
                   onTap: masuk,
                   child: Container(
@@ -129,7 +131,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -158,7 +160,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 0),
               ],
             ),
           ),

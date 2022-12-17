@@ -41,7 +41,7 @@ class _DetailState extends State<Detail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 47, 155, 165),
+        backgroundColor: Color(0xFF11249F),
         title: const Text("Results"),
       ),
       body: Container(

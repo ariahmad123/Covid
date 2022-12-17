@@ -18,7 +18,7 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: const Text('ariahmaddhani'),
+            accountName: const Text('User'),
             accountEmail: Text(user!.email!),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
@@ -40,21 +40,6 @@ class NavBar extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          ListTile(
-            title: const Text('Biodata'),
-            leading: const Icon(Icons.person),
-            onTap: () => null,
-          ),
-          ListTile(
-            title: const Text('Pengaturan'),
-            leading: const Icon(Icons.settings),
-            onTap: () => null,
-          ),
-          ListTile(
-            title: const Text('Tentang'),
-            leading: const Icon(Icons.info),
-            onTap: () => null,
           ),
           ListTile(
             title: const Text('Keluar'),
