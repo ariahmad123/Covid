@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'package:flutter_application_1/views/theme.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BantuanPage extends StatefulWidget {
   const BantuanPage({Key? key}) : super(key: key);
@@ -417,12 +418,30 @@ class _BantuanPageState extends State<BantuanPage> {
                       MaterialPageRoute(builder: (context) => Hotline()))),
               const SizedBox(height: 10.0),
               buildButton1(
-                  image:
-                      'assets/images/red-circle-button-with-white-plus-ferst-aid-health-care-emergency-help-3d-icon_313242-1185-removebg-preview 1).png',
-                  text: 'Rumah Sakit Terdekat',
+                image:
+                    'assets/images/red-circle-button-with-white-plus-ferst-aid-health-care-emergency-help-3d-icon_313242-1185-removebg-preview 1).png',
+                text: 'Rumah Sakit Terdekat',
+                color: Color.fromARGB(255, 179, 27, 45).withOpacity(0.2),
+                onClicked: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Rumahsakit(),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10.0),
+              buildButton1(
+                  image: 'assets/images/3Ddoctor.png',
+                  text: 'Tanya Dokter',
                   color: Color.fromARGB(255, 179, 27, 45).withOpacity(0.2),
-                  onClicked: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Rumahsakit()))),
+                  onClicked: () async {
+                    final url = 'https://www.halodoc.com/tanya-dokter';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  }),
             ],
           ),
         ),

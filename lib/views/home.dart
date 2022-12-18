@@ -147,8 +147,7 @@ class _HomeviewState extends State<HomeView> {
               ),
               child: DropdownSearch<City>(
                 dropdownSearchDecoration: InputDecoration(
-                  labelText: "Pilih Kota",
-                  hintText: "Pilih kota sesuai tempatmu",
+                  labelText: "Pilih Provinsi",
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                   border: OutlineInputBorder(
@@ -165,7 +164,7 @@ class _HomeviewState extends State<HomeView> {
                   });
                 },
                 dropdownBuilder: (context, selectedItem) =>
-                    Text(selectedItem?.key ?? "Belum memilih kota"),
+                    Text(selectedItem?.key ?? "Belum memilih Provinsi"),
                 popupItemBuilder: (context, item, isSelected) => ListTile(
                   title: Text(item.key),
                 ),
