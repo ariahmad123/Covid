@@ -5,7 +5,7 @@ import 'dart:ui';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart ';
 import 'package:flutter_application_1/views/signin.dart';
-import 'package:flutter_application_1/views/detail.dart';
+import 'package:flutter_application_1/views/detail2.dart';
 import '../widgets/widgets.dart';
 import '../views/theme.dart';
 
@@ -135,23 +135,10 @@ class _HomeviewState extends State<HomeView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DropdownSearch<String>(
-                popupProps: PopupProps.bottomSheet(
-                  showSelectedItems: true,
-                  // disabledItemFn: (String s) => s.startsWith('I'),
-                ),
-                items: ["Samarinda", "Tenggarong", "Kubar", 'Kutim'],
-                dropdownDecoratorProps: DropDownDecoratorProps(
-                  dropdownSearchDecoration: InputDecoration(
-                    labelText: "Pilih Kota",
-                    hintText: "Pilih kota sesuai tempatmu",
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                  ),
-                ),
-                onChanged: print,
-              ),
+                  mode: Mode.MENU,
+                  items: ["Brazil", "Italia (Disabled)", "Tunisia", 'Canada'],
+                  onChanged: (value) => print(value),
+                  selectedItem: "Brazil"),
             ],
           ),
         ),
