@@ -39,14 +39,6 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: appBar(context)),
-        // ignore: prefer_const_constructors
-
-        elevation: 0.0,
-        // ignore: deprecated_member_use
-        brightness: Brightness.light,
-      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -66,7 +58,7 @@ class _SignInState extends State<SignIn> {
             margin: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
-                const SizedBox(height: 140.0),
+                const SizedBox(height: 300.0),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailController,
@@ -114,7 +106,7 @@ class _SignInState extends State<SignIn> {
                     password = val;
                   },
                 ),
-                const SizedBox(height: 100),
+                const Spacer(),
                 GestureDetector(
                   onTap: masuk,
                   child: Container(
@@ -126,12 +118,12 @@ class _SignInState extends State<SignIn> {
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width - 48,
                     child: const Text(
-                      'Sign Up',
+                      'Sign In',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -160,7 +152,7 @@ class _SignInState extends State<SignIn> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 0),
+                const SizedBox(height: 20),
               ],
             ),
           ),

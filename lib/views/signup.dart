@@ -53,23 +53,26 @@ class _SignUpState extends State<SignUp> {
       ),
     );
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: appBar(context)),
-        elevation: 0.0,
-        backgroundColor: const Color.fromARGB(255, 6, 6, 108),
-        // ignore: deprecated_member_use
-        brightness: Brightness.light,
-      ),
       body: Container(
-        color: const Color.fromARGB(255, 6, 6, 108),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color(0xFF3383CD),
+              Color(0xFF11249F),
+            ],
+          ),
+          image: DecorationImage(
+            image: AssetImage("assets/images/3Dcovid.png"),
+          ),
+        ),
         child: Form(
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
-                const Spacer(),
-                logo,
-                const SizedBox(height: 10.0),
+                const SizedBox(height: 300.0),
                 TextFormField(
                   controller: _emailcontroller,
                   keyboardType: TextInputType.emailAddress,
@@ -110,7 +113,7 @@ class _SignUpState extends State<SignUp> {
                   ), //inputDecoration
                   onChanged: (val) {},
                 ),
-                const SizedBox(height: 24),
+                const Spacer(),
                 GestureDetector(
                   onTap: () async {
                     _register();
@@ -129,14 +132,14 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 18),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
                       "Al Ready have an account? ",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
+                        color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 16,
                       ),
                     ),
@@ -158,7 +161,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
               ],
             ),
           ),
